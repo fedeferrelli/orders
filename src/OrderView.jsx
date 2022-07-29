@@ -53,11 +53,11 @@ let platos = []
 
 
     return (
-        <div className="min-h-screen text-white max-w-[700px] m-auto">
+        <div className="min-h-screen text-white max-w-[1100px] m-auto">
             {orders && 
                 <div className="flex gap-4 gap-y-6 flex-wrap justify-center py-6">
                   {orders.map((order, index)=>(
-                   <div key={index} className='p-3 rounded-lg bg-yellow-500 text-gray-800 text-center text-xs'>
+                   <div key={index} className='p-3 rounded-lg bg-yellow-500 text-gray-800 text-center text-lg w-11/12 sm:w-auto'>
                      <h1 className="font-bold"> {index+1}. {order.aOrdenar[1].nombre} </h1>
                      {/* <h1> mesa: {order.aOrdenar[0].mesa} </h1> */}
                      <h1 className="mt-2 text-gray-800 capitalize"> {order.aOrdenar.slice(2).map(e=> ( <div>{e.plato} x {e.cantidad}</div> ))} </h1>
@@ -74,9 +74,9 @@ let platos = []
             
             
             {platosArray.map(e=>(
-              <div key={Math.random()} className="w-1/3 p-4 bg-yellow-500 text-gray-800  text-center rounded-lg">
+              <div key={Math.random()} className="w-11/12 sm:w-1/3 p-4 bg-yellow-500 text-gray-800  text-center rounded-lg text-xl">
               <h1 className="capitalize">{e} </h1>
-              <h1 className="text-xl font-bold mt-1">{platos.filter(plato => plato===e).length} </h1>
+              <h1 className="text-3xl font-bold mt-1">{platos.filter(plato => plato===e).length} </h1>
               </div>
               
             ))}
