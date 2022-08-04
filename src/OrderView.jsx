@@ -36,19 +36,46 @@ function OrderView() {
       
 let primiArray = [];
 let secondiArray = [];
+let dolciArray = [];
 let platos = []
 
-        orders.map(e=>(
-          primiArray.push(e.aOrdenar.slice(2)[0].plato),
-          secondiArray.push(e.aOrdenar.slice(2)[1].plato)        
-      ));
+        orders.map(e=>{
+          /* secondiArray.push(e.aOrdenar.slice(2)[1].plato)   */
 
-      platos = [...primiArray, ...secondiArray]
+          /* if (typeof(e.aOrdenar.slice(2)[0]) !== undefined){
+          primiArray.push(e.aOrdenar.slice(2)[0].plato)} */
+
+         /*  if (typeof(e.aOrdenar.slice(2)[1]) !== undefined){
+            secondiArray.push(e.aOrdenar.slice(2)[1].plato)} */
+
+                console.log(e.aOrdenar.slice(2)) 
+
+            for (let j in e.aOrdenar.slice(2)){
+              if(e.aOrdenar.slice(2)[j].categoria === "Primi Piatti"){
+                primiArray.push(e.aOrdenar.slice(2)[j].plato)}
+              if (e.aOrdenar.slice(2)[j].categoria === "Secondi Piatti"){
+                  secondiArray.push(e.aOrdenar.slice(2)[j].plato)}
+                  if (e.aOrdenar.slice(2)[j].categoria === "il Dolce"){
+                    dolciArray.push(e.aOrdenar.slice(2)[j].plato)}
+            }
+
+          });
+
+      platos = [...primiArray, ...secondiArray, ...dolciArray]
       setPlatos(platos)
       setPlatosArray([...new Set(platos)])
        }
 
       }, [orders])
+
+
+      const printPlato = (e)=>{
+
+        if(typeof(e.plato) !== undefined){
+          return e.plato
+        }
+
+      }
 
 
 
@@ -60,7 +87,7 @@ let platos = []
                    <div key={index} className='p-3 rounded-lg bg-yellow-500 text-gray-800 text-center text-lg w-11/12 sm:w-auto'>
                      <h1 className="font-bold"> {index+1}. {order.aOrdenar[1].nombre} </h1>
                      {/* <h1> mesa: {order.aOrdenar[0].mesa} </h1> */}
-                     <h1 className="mt-2 text-gray-800 capitalize"> {order.aOrdenar.slice(2).map(e=> ( <div>{e.plato} x {e.cantidad}</div> ))} </h1>
+                     <h1 className="mt-2 text-gray-800 capitalize"> {order.aOrdenar.slice(2).map(e=> ( <div> {/* {printPlato(e)} */} {e.categoria}: {e.plato} x {e.cantidad} </div> ))} </h1>
                     
                      </div> 
                   ))}
@@ -76,7 +103,9 @@ let platos = []
             {platosArray.map(e=>(
               <div key={Math.random()} className="w-11/12 sm:w-1/3 p-4 bg-yellow-500 text-gray-800  text-center rounded-lg text-xl">
               <h1 className="capitalize">{e} </h1>
-              <h1 className="text-3xl font-bold mt-1">{platos.filter(plato => plato===e).length} </h1>
+              <h1 className="text-3xl font-bold mt-1">{
+              platos.filter(plato => plato===e).length}
+              </h1>
               </div>
               
             ))}
