@@ -1,10 +1,12 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react';
+import ShowPeople from '../utils/ShowPeople';
 
 function People({orders}) {
 
    
     
     const [platos, setPlatos] = useState();  
+    
 
 
   useEffect(() => {
@@ -46,32 +48,15 @@ function People({orders}) {
     return (
         <div className="min-h-screen text-white max-w-[1100px] m-auto">
           {orders && (
-        <div className="flex gap-4 gap-y-6 flex-wrap justify-center py-6">
-            <h1 className="capitalize text-gray-200 text-center mb-6 text-3xl font-bold w-full">
+        <div className="flex gap-4 gap-y-6 flex-wrap justify-center py-6 ">
+            <h1 className="capitalize text-gray-200 text-center mb-6 text-3xl font-bold w-full ">
               Comensales
             </h1>
 
           {orders.map((order, index) => (
-            <div
-              key={index}
-              className="p-3 rounded-lg bg-blue-400 text-gray-800 text-center text-lg w-11/12 sm:w-auto"
-            >
-              <h1 className="font-bold">
-                {" "}
-                {index + 1}. {order.aOrdenar[1].nombre}{" "}
-              </h1>
-            
-              <h1 className="mt-2 text-gray-800 capitalize">
-                {" "}
-                {order.aOrdenar.slice(2).map((e) => (
-                  <div key={Math.random()}>
-                    {" "}
-                   {e.categoria}: {e.plato} x{" "}
-                    {e.cantidad}{" "}
-                  </div>
-                ))}{" "}
-              </h1>
-            </div>
+<div className="w-11/12 sm:w-auto"  key={index}>
+              <ShowPeople order={order} index={index}  />
+              </div>
           ))}
         </div>
       )}  

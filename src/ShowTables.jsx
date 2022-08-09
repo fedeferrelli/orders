@@ -1,6 +1,6 @@
 import React, {useSate, useEffect} from 'react'
 
-function Tables({plates}) {
+function ShowTables({plates}) {
 
     let tipoPlatos = [... new Set(plates)]
   
@@ -19,7 +19,7 @@ useEffect(() => {
         <div>
             {
                 tipoPlatos.map(e=>(
-                    <div className='capitalize'>
+                    <div key={e} className='capitalize'>
                     {e} x {plates.filter(plate => plate === e).length} 
                     </div>
                 ))
@@ -31,4 +31,4 @@ useEffect(() => {
     )
 }
 
-export default Tables
+export default ShowTables

@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
+import ShowTables from '../ShowTables';
 
 function Tables({orders}) {
 
@@ -60,14 +61,9 @@ function Tables({orders}) {
               >
                 <h1 className="capitalize font-bold text-3xl">{e.mesa} </h1>
                 <h1 className="text-xl mt-1">
-                  <Tables plates={e.platos} />
+                  <ShowTables plates={e.platos} />
 
-                  {/*  let platosMesa = [... new Set (e.platos)] */
-                  /*  e.platos.sort().map(plato=>(
-                  
-                  <div>{plato}</div>
-                )) */
-                  /* platos.filter(plato => plato===e).length */}
+                
                 </h1>
                 <div className='text-2xl mt-4 font-semibold'>
                   Precio Total $ 
