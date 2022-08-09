@@ -4,6 +4,8 @@ import { AiOutlineDelete } from "react-icons/ai";
 function ShowPeople({ order, index }) {
   const [showDelete, setShowDelete] = useState(false);
 
+  console.log(order)
+
   return (
     <div className="h-full">
       <section className="relative m-auto h-full">
@@ -13,10 +15,11 @@ function ShowPeople({ order, index }) {
               {" "}
               {index + 1}. {order.aOrdenar[1].nombre}{" "}
             </h1>
+            
 
             <h1 className="text-lg text-gray-800 text-center">
               ¿Estás seguro que queres{" "}
-              <spna className="font-semibold">eliminar</spna> esta orden ?
+              <spna className="font-semibold">eliminar</spna> esta orden?
             </h1>
 
             <section className="w-full flex flex-row justify-center gap-3">
@@ -40,6 +43,8 @@ function ShowPeople({ order, index }) {
               {index + 1}. {order.aOrdenar[1].nombre}{" "}
             </h1>
 
+                        
+
             <h1 className="mt-2 text-gray-800 capitalize">
               {" "}
               {order.aOrdenar.slice(2).map((e) => (
@@ -49,9 +54,14 @@ function ShowPeople({ order, index }) {
                 </div>
               ))}{" "}
             </h1>
+
+            <h1 className="font-semibold mt-4">
+              {" "}
+              Mesa: {order.aOrdenar[0].mesa}
+            </h1>
           </div>
 
-          <div className=" mt-6 text-right">
+          <div className=" mt-2 text-right">
             <button
               className=" text-xl bg-blue-300 rounded-full p-2 border-gray-800 w-auto"
               onClick={(e) => setShowDelete(true)}

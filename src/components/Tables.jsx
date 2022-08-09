@@ -45,6 +45,7 @@ function Tables({orders}) {
         }
       }, [orders]);
 
+      console.log(tables)
 
     return (
         <div>
