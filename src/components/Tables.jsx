@@ -53,7 +53,7 @@ function Tables({orders}) {
             {infoReady && 
             <section className="w-full flex flex-wrap p-2 justify-center  gap-3 mt-4">
             <h1 className="capitalize text-gray-800 text-center mb-6 text-3xl font-bold w-full">
-              Mesas
+              Mesas: <span className="font-normal">{tables.length}</span>
             </h1>
 
             {tables.map((e) => (

@@ -44,9 +44,9 @@ function Plates({orders}) {
       
         <div id="plates">
             {platos && 
-             <section className="w-full flex flex-wrap p-2 justify-center  gap-3 pt-12">
+             <section className="w-full flex flex-wrap p-2 justify-center  gap-3 pt-10">
             <h1 className="capitalize text-gray-800 text-center mb-6 text-3xl font-bold w-full  mt-[80px] ">
-              Platos
+              Platos: <span className="font-normal">{platos.length}</span>
             </h1>
 
             {platosArray.map((e) => (

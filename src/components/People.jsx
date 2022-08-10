@@ -51,7 +51,7 @@ function People({orders}) {
           {orders && (
         <div className="flex gap-4 gap-y-6 flex-wrap justify-center py-6 ">
             <h1 className="capitalize text-gray-800 text-center mb-6 text-3xl font-bold w-full ">
-              Comensales
+              Comensales: <span className='font-normal'>{orders.length}</span>
             </h1>
 
           {orders.map((order, index) => (
