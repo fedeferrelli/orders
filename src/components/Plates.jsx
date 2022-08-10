@@ -42,17 +42,17 @@ function Plates({orders}) {
     return (
 
       
-        <div>
+        <div id="plates">
             {platos && 
-             <section className="w-full flex flex-wrap p-2 justify-center  gap-3 border-t-2 border-gray-900 mt-6 pt-12">
-            <h1 className="capitalize text-gray-200 text-center mb-6 text-3xl font-bold w-full">
+             <section className="w-full flex flex-wrap p-2 justify-center  gap-3 pt-12">
+            <h1 className="capitalize text-gray-800 text-center mb-6 text-3xl font-bold w-full  mt-[80px] ">
               Platos
             </h1>
 
             {platosArray.map((e) => (
               <div
                 key={Math.random()}
-                className="w-11/12 sm:w-1/3 p-4 bg-blue-400 text-gray-800  text-center rounded-lg text-xl"
+                className="w-11/12 sm:w-1/3 p-4 shadow-lg shadow-gray-400 bg-gray-100 border-[1px] border-gray-300 text-gray-800  text-center rounded-lg text-xl"
               >
                 <h1 className="capitalize">{e} </h1>
                 <h1 className="text-3xl font-bold mt-1">

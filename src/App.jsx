@@ -4,6 +4,7 @@ import firebase from "../src/utils/Firebase/firebaseConfig";
 import People from './components/People';
 import Plates from './components/Plates';
 import Tables from './components/Tables';
+import NavBar from './components/NavBar';
 
 
 
@@ -31,13 +32,15 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-gray-800">
+    <div className="bg-gray-200">
 
-    <People orders={orders}/>
+   <NavBar/>
 
       <Plates orders={orders}/>
  
       <Tables orders = {orders}/>
+
+      <People orders={orders}/>
 
     
 

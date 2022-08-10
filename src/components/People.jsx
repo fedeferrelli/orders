@@ -46,15 +46,16 @@ function People({orders}) {
 
 
     return (
-        <div className="min-h-screen text-white max-w-[1100px] m-auto">
+        <div className="min-h-screen text-white max-w-[1100px] m-auto mt-10" id='people'>
+          <div className="w-11/12 sm:w-full m-auto border-[0.5px] border-t border-gray-300"></div>
           {orders && (
         <div className="flex gap-4 gap-y-6 flex-wrap justify-center py-6 ">
-            <h1 className="capitalize text-gray-200 text-center mb-6 text-3xl font-bold w-full ">
+            <h1 className="capitalize text-gray-800 text-center mb-6 text-3xl font-bold w-full ">
               Comensales
             </h1>
 
           {orders.map((order, index) => (
-<div className="w-11/12 sm:w-auto"  key={index}>
+<div className="w-11/12 sm:w-auto shadow-lg shadow-gray-400 bg-gray-100 border-[1px] border-gray-300 rounded-lg "  key={index}>
               <ShowPeople order={order} index={index}  />
               </div>
           ))}
