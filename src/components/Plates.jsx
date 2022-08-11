@@ -42,9 +42,9 @@ function Plates({orders}) {
     return (
 
       
-        <div id="plates">
+        <div id="plates" className="m-auto max-w-[1100px]">
             {platos && 
-             <section className="w-full flex flex-wrap p-2 justify-center  gap-3 pt-10">
+             <section className="flex flex-wrap justify-center  gap-3 pt-10">
             <h1 className="capitalize text-gray-800 text-center mb-6 text-3xl font-bold w-full  mt-[80px] ">
               Platos: <span className="font-normal">{platos.length}</span>
             </h1>
